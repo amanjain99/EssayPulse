@@ -11,22 +11,19 @@ export function CategorySection({ category, defaultOpen = true }: CategorySectio
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="mb-8">
+    <div className="tw-accordion">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-bg-secondary rounded-xl 
-                   hover:bg-border/50 transition-colors cursor-pointer"
+        className="tw-accordion-header"
       >
-        <div className="text-left">
-          <h2 className="font-serif text-xl font-semibold text-text-primary">
+        <div>
+          <h2 className="tw-accordion-title">
             {category.name}
           </h2>
-          <p className="text-sm text-text-secondary mt-1">{category.description}</p>
+          <p className="tw-accordion-subtitle">{category.description}</p>
         </div>
         <svg
-          className={`w-5 h-5 text-accent-light transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`tw-accordion-icon w-5 h-5 ${isOpen ? "open" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -36,13 +33,14 @@ export function CategorySection({ category, defaultOpen = true }: CategorySectio
       </button>
 
       {isOpen && (
-        <div className="mt-4 grid gap-3 pl-2">
-          {category.prompts.map((prompt) => (
-            <PromptCard key={prompt.id} id={prompt.id} text={prompt.text} />
-          ))}
+        <div className="tw-accordion-content">
+          <div className="space-y-3">
+            {category.prompts.map((prompt) => (
+              <PromptCard key={prompt.id} id={prompt.id} text={prompt.text} />
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
-

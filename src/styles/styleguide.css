@@ -1,0 +1,908 @@
+/* 
+ * TYPEWRITER STYLE GUIDE
+ * Isolated styles for the style guide page only
+ * All styles scoped to .typewriter-guide class
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES & CSS VARIABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide {
+  /* Typography */
+  --tw-font-typewriter: 'Courier Prime', 'Courier New', monospace;
+  --tw-font-display: 'Special Elite', cursive;
+  
+  /* Colors - Backgrounds */
+  --tw-bg-primary: #FAF6E9;
+  --tw-bg-secondary: #F0E9D8;
+  
+  /* Colors - Text */
+  --tw-text-primary: #1A1814;
+  --tw-text-secondary: #5C564C;
+  
+  /* Colors - Accents */
+  --tw-accent: #8B0000;
+  --tw-accent-light: #B84444;
+  
+  /* Colors - Functional */
+  --tw-success: #4A6741;
+  --tw-warning: #996B3D;
+  --tw-border: #D4CCBA;
+  
+  /* Shadows */
+  --tw-shadow-hard: 4px 4px 0 rgba(26, 24, 20, 0.15);
+  --tw-shadow-hard-hover: 2px 2px 0 rgba(26, 24, 20, 0.2);
+  
+  /* Base styles */
+  font-family: var(--tw-font-typewriter);
+  background-color: var(--tw-bg-primary);
+  color: var(--tw-text-primary);
+  line-height: 1.8;
+  min-height: 100vh;
+  
+  /* Paper texture */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide h1,
+.typewriter-guide h2,
+.typewriter-guide h3,
+.typewriter-guide h4 {
+  font-family: var(--tw-font-display);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.typewriter-guide .tw-h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--tw-text-primary);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.typewriter-guide .tw-h2 {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.typewriter-guide .tw-h3 {
+  font-size: 1.25rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.typewriter-guide .tw-h4 {
+  font-size: 1rem;
+  font-family: var(--tw-font-typewriter);
+  font-weight: 700;
+}
+
+.typewriter-guide .tw-body {
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.typewriter-guide .tw-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.typewriter-guide .tw-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-caption {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-strikethrough {
+  text-decoration: line-through;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.typewriter-guide .tw-red-text {
+  color: var(--tw-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-btn {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--tw-text-primary);
+  background: var(--tw-bg-primary);
+  color: var(--tw-text-primary);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: var(--tw-shadow-hard);
+}
+
+.typewriter-guide .tw-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--tw-shadow-hard-hover);
+}
+
+.typewriter-guide .tw-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.typewriter-guide .tw-btn-primary {
+  background: var(--tw-text-primary);
+  color: var(--tw-bg-primary);
+}
+
+.typewriter-guide .tw-btn-primary:hover {
+  background: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-btn-danger {
+  border-color: var(--tw-accent);
+  color: var(--tw-accent);
+}
+
+.typewriter-guide .tw-btn-danger:hover {
+  background: var(--tw-accent);
+  color: var(--tw-bg-primary);
+}
+
+.typewriter-guide .tw-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Typewriter Key Button */
+.typewriter-guide .tw-key {
+  font-family: var(--tw-font-typewriter);
+  font-size: 1rem;
+  font-weight: 700;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 2px solid var(--tw-text-primary);
+  background: var(--tw-bg-secondary);
+  color: var(--tw-text-primary);
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.05s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter-guide .tw-key:hover {
+  background: var(--tw-bg-primary);
+}
+
+.typewriter-guide .tw-key:active,
+.typewriter-guide .tw-key.active {
+  transform: translateY(2px);
+  background: var(--tw-text-primary);
+  color: var(--tw-bg-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FORM ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-input {
+  font-family: var(--tw-font-typewriter);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--tw-border);
+  background: var(--tw-bg-primary);
+  color: var(--tw-text-primary);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.typewriter-guide .tw-input:focus {
+  border-color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-input::placeholder {
+  color: var(--tw-text-secondary);
+  font-style: italic;
+}
+
+.typewriter-guide .tw-textarea {
+  font-family: var(--tw-font-typewriter);
+  font-size: 1rem;
+  line-height: 2;
+  padding: 1rem;
+  border: 2px solid var(--tw-border);
+  background: var(--tw-bg-primary);
+  color: var(--tw-text-primary);
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  outline: none;
+}
+
+.typewriter-guide .tw-textarea:focus {
+  border-color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-textarea::placeholder {
+  color: var(--tw-text-secondary);
+  font-style: italic;
+}
+
+/* Checkbox styled as checkmark box */
+.typewriter-guide .tw-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.typewriter-guide .tw-checkbox input {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--tw-text-primary);
+  background: var(--tw-bg-primary);
+  cursor: pointer;
+  position: relative;
+}
+
+.typewriter-guide .tw-checkbox input:checked::after {
+  content: '×';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--tw-text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CARDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-card {
+  background: var(--tw-bg-primary);
+  border: 2px solid var(--tw-border);
+  padding: 1.5rem;
+  box-shadow: var(--tw-shadow-hard);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.typewriter-guide .tw-card-interactive {
+  cursor: pointer;
+}
+
+.typewriter-guide .tw-card-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(26, 24, 20, 0.15);
+  border-color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-card-secondary {
+  background: var(--tw-bg-secondary);
+}
+
+/* Prompt Card specific */
+.typewriter-guide .tw-prompt-card {
+  text-align: left;
+}
+
+.typewriter-guide .tw-prompt-card .tw-prompt-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.typewriter-guide .tw-prompt-card .tw-prompt-cta {
+  font-size: 0.875rem;
+  color: var(--tw-accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.typewriter-guide .tw-card-interactive:hover .tw-prompt-cta {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EDITOR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-editor {
+  border: 2px solid var(--tw-border);
+  background: var(--tw-bg-primary);
+}
+
+.typewriter-guide .tw-editor-toolbar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: var(--tw-bg-secondary);
+  border-bottom: 2px solid var(--tw-border);
+}
+
+.typewriter-guide .tw-editor-content {
+  padding: 1.5rem;
+  min-height: 200px;
+  font-family: var(--tw-font-typewriter);
+  font-size: 1.125rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.typewriter-guide .tw-editor-content:focus {
+  outline: none;
+}
+
+.typewriter-guide .tw-editor-placeholder {
+  color: var(--tw-text-secondary);
+  font-style: italic;
+}
+
+/* Block cursor simulation */
+.typewriter-guide .tw-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: var(--tw-text-primary);
+  animation: tw-blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes tw-blink {
+  50% { opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SIDEBAR & PANELS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-sidebar {
+  background: var(--tw-bg-secondary);
+  border: 2px solid var(--tw-border);
+  padding: 1.5rem;
+}
+
+.typewriter-guide .tw-sidebar-header {
+  font-family: var(--tw-font-display);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--tw-border);
+}
+
+.typewriter-guide .tw-panel {
+  background: var(--tw-bg-primary);
+  border: 2px solid var(--tw-border);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATUS INDICATORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-status {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.typewriter-guide .tw-status-saved {
+  color: var(--tw-success);
+}
+
+.typewriter-guide .tw-status-saving {
+  color: var(--tw-warning);
+}
+
+.typewriter-guide .tw-status-unsaved {
+  color: var(--tw-text-secondary);
+}
+
+/* Badge / Tag */
+.typewriter-guide .tw-badge {
+  display: inline-block;
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid currentColor;
+}
+
+.typewriter-guide .tw-badge-success {
+  color: var(--tw-success);
+  border-color: var(--tw-success);
+}
+
+.typewriter-guide .tw-badge-warning {
+  color: var(--tw-warning);
+  border-color: var(--tw-warning);
+}
+
+.typewriter-guide .tw-badge-danger {
+  color: var(--tw-accent);
+  border-color: var(--tw-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROGRESS & RATINGS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-rating {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.typewriter-guide .tw-rating-star {
+  color: var(--tw-border);
+}
+
+.typewriter-guide .tw-rating-star.filled {
+  color: var(--tw-warning);
+}
+
+/* Progress bar styled as typed characters */
+.typewriter-guide .tw-progress {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+
+.typewriter-guide .tw-progress-bar {
+  display: flex;
+  gap: 2px;
+}
+
+.typewriter-guide .tw-progress-segment {
+  width: 1rem;
+  height: 0.75rem;
+  border: 1px solid var(--tw-border);
+  background: var(--tw-bg-primary);
+}
+
+.typewriter-guide .tw-progress-segment.filled {
+  background: var(--tw-text-primary);
+  border-color: var(--tw-text-primary);
+}
+
+/* Trait Card */
+.typewriter-guide .tw-trait-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--tw-bg-primary);
+  border: 2px solid var(--tw-border);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.typewriter-guide .tw-trait-card:hover {
+  border-color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-trait-name {
+  font-weight: 700;
+}
+
+.typewriter-guide .tw-trait-score {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ALERTS & MESSAGES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-alert {
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--tw-border);
+  background: var(--tw-bg-primary);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.typewriter-guide .tw-alert-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+
+.typewriter-guide .tw-alert-info {
+  border-color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-alert-success {
+  border-color: var(--tw-success);
+  border-left-width: 4px;
+}
+
+.typewriter-guide .tw-alert-success .tw-alert-icon {
+  color: var(--tw-success);
+}
+
+.typewriter-guide .tw-alert-warning {
+  border-color: var(--tw-warning);
+  border-left-width: 4px;
+}
+
+.typewriter-guide .tw-alert-warning .tw-alert-icon {
+  color: var(--tw-warning);
+}
+
+.typewriter-guide .tw-alert-danger {
+  border-color: var(--tw-accent);
+  border-left-width: 4px;
+}
+
+.typewriter-guide .tw-alert-danger .tw-alert-icon {
+  color: var(--tw-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 24, 20, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 50;
+}
+
+.typewriter-guide .tw-modal {
+  background: var(--tw-bg-primary);
+  border: 2px solid var(--tw-text-primary);
+  box-shadow: 8px 8px 0 rgba(26, 24, 20, 0.2);
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.typewriter-guide .tw-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid var(--tw-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typewriter-guide .tw-modal-title {
+  font-family: var(--tw-font-display);
+  font-size: 1.25rem;
+}
+
+.typewriter-guide .tw-modal-close {
+  font-family: var(--tw-font-typewriter);
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-modal-close:hover {
+  color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-modal-body {
+  padding: 1.5rem;
+}
+
+.typewriter-guide .tw-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 2px solid var(--tw-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOADING STATES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-loading {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-family: var(--tw-font-typewriter);
+}
+
+.typewriter-guide .tw-loading-dot {
+  animation: tw-loading-bounce 1.4s infinite ease-in-out both;
+}
+
+.typewriter-guide .tw-loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.typewriter-guide .tw-loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes tw-loading-bounce {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+/* Typewriter loading animation */
+.typewriter-guide .tw-loading-typewriter {
+  font-family: var(--tw-font-typewriter);
+  overflow: hidden;
+  border-right: 2px solid var(--tw-text-primary);
+  white-space: nowrap;
+  animation: 
+    tw-typing 2s steps(20, end) infinite,
+    tw-blink-caret 0.75s step-end infinite;
+}
+
+@keyframes tw-typing {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+
+@keyframes tw-blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DIVIDERS & DECORATIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-divider {
+  text-align: center;
+  color: var(--tw-text-secondary);
+  margin: 2rem 0;
+  font-family: var(--tw-font-typewriter);
+  letter-spacing: 0.5em;
+}
+
+.typewriter-guide .tw-divider-line {
+  border: none;
+  border-top: 2px solid var(--tw-border);
+  margin: 2rem 0;
+}
+
+.typewriter-guide .tw-divider-double {
+  border: none;
+  border-top: 2px solid var(--tw-border);
+  border-bottom: 2px solid var(--tw-border);
+  height: 6px;
+  margin: 2rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid var(--tw-border);
+  background: var(--tw-bg-secondary);
+}
+
+.typewriter-guide .tw-nav-brand {
+  font-family: var(--tw-font-display);
+  font-size: 1.5rem;
+  color: var(--tw-text-primary);
+  text-decoration: none;
+}
+
+.typewriter-guide .tw-nav-link {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tw-text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.typewriter-guide .tw-nav-link:hover,
+.typewriter-guide .tw-nav-link.active {
+  color: var(--tw-text-primary);
+  border-bottom-color: var(--tw-text-primary);
+}
+
+.typewriter-guide .tw-back-link {
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  color: var(--tw-text-secondary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.typewriter-guide .tw-back-link:hover {
+  color: var(--tw-text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LISTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.typewriter-guide .tw-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.typewriter-guide .tw-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-list-numbered {
+  counter-reset: tw-counter;
+}
+
+.typewriter-guide .tw-list-numbered li {
+  counter-increment: tw-counter;
+}
+
+.typewriter-guide .tw-list-numbered li::before {
+  content: counter(tw-counter) '.';
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATS DISPLAY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.875rem;
+  color: var(--tw-text-secondary);
+}
+
+.typewriter-guide .tw-stats-divider {
+  color: var(--tw-border);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOOLTIP
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.typewriter-guide .tw-tooltip-content {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background: var(--tw-text-primary);
+  color: var(--tw-bg-primary);
+  font-family: var(--tw-font-typewriter);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+.typewriter-guide .tw-tooltip:hover .tw-tooltip-content {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION LAYOUT FOR STYLE GUIDE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.typewriter-guide .tw-section {
+  margin-bottom: 4rem;
+}
+
+.typewriter-guide .tw-section-title {
+  font-family: var(--tw-font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--tw-border);
+}
+
+.typewriter-guide .tw-component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.typewriter-guide .tw-component-box {
+  padding: 1.5rem;
+  background: var(--tw-bg-secondary);
+  border: 1px dashed var(--tw-border);
+}
+
+.typewriter-guide .tw-component-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--tw-text-secondary);
+  margin-bottom: 1rem;
+  font-family: var(--tw-font-typewriter);
+}
+
+/* Color swatch */
+.typewriter-guide .tw-color-swatch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.typewriter-guide .tw-color-box {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--tw-border);
+}
+
+.typewriter-guide .tw-color-info {
+  font-size: 0.875rem;
+}
+
+.typewriter-guide .tw-color-name {
+  font-weight: 700;
+}
+
+.typewriter-guide .tw-color-hex {
+  color: var(--tw-text-secondary);
+  font-size: 0.75rem;
+}
+

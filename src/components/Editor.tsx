@@ -85,54 +85,36 @@ export function Editor({ content, onUpdate, placeholder }: EditorProps) {
   return (
     <div className="flex flex-col h-full">
       {/* Toolbar */}
-      <div className="flex items-center gap-1 p-3 border-b border-border bg-bg-secondary/50 rounded-t-xl">
+      <div className="tw-editor-toolbar">
         <button
           onClick={toggleBold}
-          className={`p-2 rounded-lg transition-colors ${
-            editor.isActive("bold")
-              ? "bg-accent text-bg-primary"
-              : "hover:bg-bg-secondary text-text-secondary hover:text-text-primary"
-          }`}
+          className={`tw-key ${editor.isActive("bold") ? "active" : ""}`}
           title="Bold"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 4h8a4 4 0 014 4 4 4 0 01-4 4H6z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 12h9a4 4 0 014 4 4 4 0 01-4 4H6z" />
-          </svg>
+          B
         </button>
         <button
           onClick={toggleItalic}
-          className={`p-2 rounded-lg transition-colors ${
-            editor.isActive("italic")
-              ? "bg-accent text-bg-primary"
-              : "hover:bg-bg-secondary text-text-secondary hover:text-text-primary"
-          }`}
+          className={`tw-key ${editor.isActive("italic") ? "active" : ""}`}
           title="Italic"
+          style={{ fontStyle: "italic" }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 4h4m-2 0v16m4-16h-4m0 16h4" transform="skewX(-10)" />
-          </svg>
+          I
         </button>
         <button
           onClick={toggleUnderline}
-          className={`p-2 rounded-lg transition-colors ${
-            editor.isActive("underline")
-              ? "bg-accent text-bg-primary"
-              : "hover:bg-bg-secondary text-text-secondary hover:text-text-primary"
-          }`}
+          className={`tw-key ${editor.isActive("underline") ? "active" : ""}`}
           title="Underline"
+          style={{ textDecoration: "underline" }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v7a5 5 0 0010 0V4M5 20h14" />
-          </svg>
+          U
         </button>
       </div>
 
       {/* Editor */}
-      <div className="flex-1 p-6 overflow-y-auto bg-bg-primary rounded-b-xl">
+      <div className="tw-editor-content flex-1 overflow-y-auto">
         <EditorContent editor={editor} className="h-full" />
       </div>
     </div>
   );
 }
-

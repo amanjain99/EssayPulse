@@ -1,22 +1,25 @@
+import { Link } from "react-router-dom";
 import { CategorySection } from "../components/CategorySection";
 import { categories } from "../lib/prompts";
 
 export function PromptSelector() {
   return (
     <div className="min-h-screen bg-bg-primary">
-      <div className="max-w-3xl mx-auto px-6 py-12">
+      <div className="max-w-3xl mx-auto px-8 py-12">
         {/* Header */}
         <header className="text-center mb-12">
-          <h1 className="font-serif text-4xl font-extrabold text-text-primary mb-3">
-            EssayPulse
-          </h1>
-          <p className="text-text-secondary text-lg max-w-md mx-auto">
-            Practice narrative writing with real-time AI feedback. Choose a prompt to begin your story.
+          <h1 className="tw-h1">EssayPulse</h1>
+          <p className="tw-body mt-6" style={{ maxWidth: "500px", margin: "1.5rem auto 0" }}>
+            Practice narrative writing with real-time AI feedback.
+            <br />
+            <span className="tw-caption">Choose a prompt to begin your story.</span>
           </p>
         </header>
 
+        <div className="tw-divider">═ ═ ═ ═ ═</div>
+
         {/* Categories */}
-        <div className="space-y-2">
+        <div className="space-y-4">
           {categories.map((category, index) => (
             <CategorySection
               key={category.id}
@@ -26,12 +29,24 @@ export function PromptSelector() {
           ))}
         </div>
 
+        <div className="tw-divider">— — —</div>
+
         {/* Footer */}
-        <footer className="mt-16 text-center text-sm text-text-secondary">
-          <p>Write at least 150 words to receive AI feedback on your narrative.</p>
+        <footer className="text-center">
+          <div className="tw-alert tw-alert-info inline-block text-left mx-auto">
+            <span className="tw-alert-icon">ℹ</span>
+            <p className="tw-body-sm">
+              Write at least 150 words to receive AI feedback on your narrative.
+            </p>
+          </div>
+          <Link 
+            to="/style-guide" 
+            className="tw-back-link mt-8 justify-center"
+          >
+            View Style Guide →
+          </Link>
         </footer>
       </div>
     </div>
   );
 }
-

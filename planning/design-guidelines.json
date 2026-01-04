@@ -1,0 +1,203 @@
+{
+  "aesthetic": "Typewriter",
+  "description": "A nostalgic design style that evokes the mechanical, tactile experience of vintage typewriters. Conveys authenticity, craftsmanship, intimacy, intellectual depth, and vintage charm.",
+
+  "typography": {
+    "primary": {
+      "family": "Courier Prime",
+      "fallbacks": ["Courier New", "monospace"],
+      "usage": "Body text, editor content, UI elements",
+      "notes": "Essential monospace font for typewriter feel"
+    },
+    "display": {
+      "family": "Special Elite",
+      "fallbacks": ["cursive"],
+      "usage": "Headings, titles, emphasis",
+      "notes": "Has authentic worn/imperfect look"
+    },
+    "googleFontsImport": "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap",
+    "characteristics": {
+      "letterSpacing": "0.02em",
+      "lineHeight": 2.0,
+      "notes": "Double-spaced like real typed documents"
+    },
+    "conventions": {
+      "emphasis": "Underlines (typewriters couldn't do bold/italic easily)",
+      "headings": "Often ALL-CAPS",
+      "corrections": "Strikethrough text ~~like this~~"
+    }
+  },
+
+  "colors": {
+    "backgrounds": {
+      "primary": {
+        "hex": "#FAF6E9",
+        "description": "Aged paper - slightly yellow cream"
+      },
+      "secondary": {
+        "hex": "#F0E9D8",
+        "description": "Warmer cream for cards/sections"
+      }
+    },
+    "text": {
+      "primary": {
+        "hex": "#1A1814",
+        "description": "Deep black ink"
+      },
+      "secondary": {
+        "hex": "#5C564C",
+        "description": "Faded/aged ink"
+      }
+    },
+    "accents": {
+      "primary": {
+        "hex": "#8B0000",
+        "description": "Dark red - typewriter red ribbon color"
+      },
+      "light": {
+        "hex": "#B84444",
+        "description": "Lighter red for hover states"
+      }
+    },
+    "functional": {
+      "success": {
+        "hex": "#4A6741",
+        "description": "Muted forest green"
+      },
+      "warning": {
+        "hex": "#996B3D",
+        "description": "Sepia/brown tone"
+      },
+      "border": {
+        "hex": "#D4CCBA",
+        "description": "Warm gray border"
+      }
+    },
+    "palette_notes": "High contrast between text and background. Minimal accent colors. Red for corrections/emphasis like old red/black ribbon typewriters."
+  },
+
+  "textures": {
+    "paperGrain": {
+      "description": "Subtle paper texture using SVG noise filter",
+      "implementation": "background-image with feTurbulence SVG filter",
+      "opacity": 0.04
+    },
+    "effects": [
+      "Paper grain texture",
+      "Subtle noise overlay",
+      "Optional: aged/distressed effects, coffee stains, worn edges"
+    ]
+  },
+
+  "borders_and_shadows": {
+    "corners": {
+      "style": "Sharp or minimal rounding",
+      "borderRadius": "2px or none",
+      "notes": "Remove modern rounded-xl/2xl styles"
+    },
+    "shadows": {
+      "style": "Hard, offset shadows like stacked paper",
+      "example": "4px 4px 0 rgba(26,24,20,0.15)",
+      "notes": "No soft/diffuse shadows - they feel too modern"
+    },
+    "borders": {
+      "style": "Solid, visible borders",
+      "width": "2px",
+      "notes": "Clear demarcation like paper edges"
+    }
+  },
+
+  "interactive_elements": {
+    "buttons": {
+      "style": "Rectangular 'typewriter key' appearance",
+      "border": "2px solid",
+      "hover": "translate-y to simulate key press",
+      "text": "Uppercase, tracking-wider",
+      "notes": "Should feel like pressing a physical key"
+    },
+    "cursor": {
+      "style": "Block cursor █",
+      "animation": "Blink with step-end timing",
+      "duration": "1s infinite"
+    },
+    "typing": {
+      "animation": "Character-by-character reveal (optional)",
+      "sound": "Mechanical click-clack keystroke sounds (optional)"
+    },
+    "hover_states": {
+      "cards": "Slight translate + shadow reduction (like picking up paper)"
+    }
+  },
+
+  "layout": {
+    "structure": "Single-column layouts preferred",
+    "margins": "Generous - mimicking standard letter format",
+    "alignment": "Left-aligned text (justified was hard on typewriters)",
+    "spacing": "Double-spaced or 1.5x line height"
+  },
+
+  "decorative_elements": {
+    "dividers": "Use characters like --- or *** or ═══",
+    "brackets": "[bracketed notes] for annotations",
+    "pageNumbers": "Centered at bottom",
+    "arrows": "Use text arrows → instead of SVG icons where appropriate"
+  },
+
+  "component_guidelines": {
+    "editor": {
+      "font": "Courier Prime",
+      "lineHeight": 2,
+      "placeholder": "Italic, faded ink color",
+      "toolbar": "Buttons styled as typewriter keys (B, I, U)"
+    },
+    "promptCards": {
+      "background": "Paper color with hard offset shadow",
+      "border": "2px solid, visible",
+      "hover": "Lift effect (-translate) with shadow change",
+      "cta": "Text arrow → Begin writing"
+    },
+    "sidebar": {
+      "background": "Secondary paper color",
+      "headers": "Display font, possibly underlined",
+      "stats": "Bracketed [SAVED] format"
+    },
+    "header": {
+      "logo": "Display font with possible underline emphasis",
+      "stats": "Em-dash separated: words — paragraphs — status"
+    }
+  },
+
+  "css_variables": {
+    "--font-typewriter": "'Courier Prime', 'Courier New', monospace",
+    "--font-display": "'Special Elite', cursive",
+    "--color-bg-primary": "#FAF6E9",
+    "--color-bg-secondary": "#F0E9D8",
+    "--color-text-primary": "#1A1814",
+    "--color-text-secondary": "#5C564C",
+    "--color-accent": "#8B0000",
+    "--color-accent-light": "#B84444",
+    "--color-success": "#4A6741",
+    "--color-warning": "#996B3D",
+    "--color-border": "#D4CCBA"
+  },
+
+  "mood_and_feel": [
+    "Authenticity",
+    "Craftsmanship",
+    "Intimacy",
+    "Intellectual depth",
+    "Vintage charm",
+    "Slower, deliberate pace of creation"
+  ],
+
+  "anti_patterns": [
+    "Soft, diffuse shadows",
+    "Large border-radius (rounded corners)",
+    "Sans-serif fonts",
+    "Gradient backgrounds",
+    "Bright/saturated accent colors",
+    "Modern pill-shaped buttons",
+    "Line cursor (use block cursor instead)"
+  ]
+}
+

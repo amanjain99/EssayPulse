@@ -23,20 +23,12 @@ export function PromptCard({ id, text }: PromptCardProps) {
   return (
     <button
       onClick={handleClick}
-      className="w-full text-left p-5 bg-bg-primary rounded-xl border border-border 
-                 hover:border-accent-light hover:shadow-[var(--shadow-soft)] 
-                 transition-all duration-200 group cursor-pointer"
+      className="tw-card tw-card-interactive tw-prompt-card w-full text-left"
     >
-      <p className="font-serif text-text-primary leading-relaxed group-hover:text-accent transition-colors">
+      <p className="tw-prompt-text">
         {text}
       </p>
-      <div className="mt-3 flex items-center gap-2 text-accent-light text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-        <span>Start writing</span>
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </div>
+      <p className="tw-prompt-cta">→ Begin writing</p>
     </button>
   );
 }
-
